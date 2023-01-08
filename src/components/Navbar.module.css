@@ -33,6 +33,7 @@
 }
 
 .links_list {
+  margin: 0;
   display: flex;
   list-style: none;
 }
@@ -43,10 +44,25 @@
 
 .links_list li a {
   padding: 0.4em 0.6em;
-  margin: auto, 0;
 }
 
 .active {
-    background-color: rgb(75, 75, 75);
-    color: rgb(0, 0, 0);
-  }
+  background-color: rgb(75, 75, 75);
+  color: rgb(0, 0, 0);
+}
+
+.admin_button_sair {
+    font-size: 15px;
+    color: rgb(255, 0, 0);
+    background-color: #000;
+    border: none;
+    margin: 5px auto auto 35rem;
+    justify-content: center;
+}
+
+.admin_button_sair:hover {
+    font-size: 15px;
+    color: rgb(180, 0, 0);
+    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+}

@@ -8,9 +8,12 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Login from "./extras/Login";
+import Register from "./extras/Register";
 
 import Início from "./pages/Início/Início";
-import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -19,7 +22,8 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<Início />} />
-          <Route path="/" element={<Início />} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Register/>} />
         </Routes>
         <Footer/>
       </Router>
