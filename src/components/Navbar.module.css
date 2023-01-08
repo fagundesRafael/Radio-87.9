@@ -1,0 +1,52 @@
+.navbar_top_area {
+  background-color: #fff;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner_container {
+  display: flex;
+  margin: auto;
+}
+
+.img_container {
+  width: 300px;
+  display: flex;
+  margin: auto;
+}
+
+.navbar_menu_row {
+  background-color: black;
+  width: 100vw;
+  /* height: 35px; */
+}
+
+.navbar_menu_row a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.links_list {
+  display: flex;
+  list-style: none;
+}
+
+.links_list li {
+  margin-right: 1em;
+}
+
+.links_list li a {
+  padding: 0.4em 0.6em;
+  margin: auto, 0;
+}
+
+.active {
+    background-color: rgb(75, 75, 75);
+    color: rgb(0, 0, 0);
+  }
