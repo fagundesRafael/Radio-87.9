@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -9,7 +9,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -83,6 +83,7 @@ textarea::placeholder {
   border: none;
   padding: 10px 15px;
   font-size: 1em;
+  margin-bottom: 10px;
 }
 
 .btn.btn-dark {
@@ -115,10 +116,11 @@ button[disabled] {
   background-color: #aaa;
 }
 
-.container .error {
+.error {
   color: #721c24;
+  font-weight: bold;
   background-color: #f8d7da;
-  border: 1px solid #f5c6cb;
+  border: 1px solid #721c24;
   padding: 5px;
   border-radius: 5px;
 }

@@ -3,10 +3,36 @@ import styles from "./Register.module.css";
 import { useState, useEffect } from "react";
 
 const Register = () => {
+  const [displayName, setDisplayName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfimrPassword] = useState("")
+  const [error, setError] = useState('')
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    setError("")
+
+    const user = {
+      displayName,
+      email,
+      password
+    }
+
+    if(password !== confirmPassword) {
+      setError("As senhas precisam ser iguais")
+      return
+    }
+
+    console.log(user)
+
+  }
+
   return (
-    <div>
+    <div className={styles.register}>
       <h1>Página de cadastro de usuário!</h1>
-      <form>
+      <form onSubmit={handleSubmit} >
         <label>
           <span>Nome:</span>
           <input
@@ -14,6 +40,8 @@ const Register = () => {
             name="displayName"
             placeholder="Informe seu nome"
             required
+            onChange={(e) => setDisplayName(e.target.value)}
+            value={displayName}
           />
         </label>
         <label>
@@ -23,6 +51,8 @@ const Register = () => {
             name="email"
             placeholder="Informe seu email"
             required
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
         </label>
         <label>
@@ -32,6 +62,8 @@ const Register = () => {
             name="password"
             placeholder="Insira sua senha"
             required
+            onChange={(e) => setPassword(e.target.value)}
+            value={password}
           />
         </label>
         <label>
@@ -41,9 +73,12 @@ const Register = () => {
             name="confirmPassword"
             placeholder="Confirme a sua senha"
             required
+            onChange={(e) => setConfimrPassword(e.target.value)}
+            value={confirmPassword}
           />
         </label>
-        <button classe="btn" >Cadastrar</button>
+        <button className="btn" >Cadastrar</button>
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );
