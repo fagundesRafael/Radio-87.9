@@ -1,0 +1,80 @@
+.first_home_container {
+  display: flex;
+  gap: 10px;
+  margin: 10px auto;
+  max-width: 70rem;
+  background-color: aquamarine;
+}
+
+.left_container {
+  display: flex;
+  height: 398px;
+  width: 550px;
+  background-color: forestgreen;
+}
+
+.right_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 10px;
+  height: 398px;
+  background-color: bisque;
+}
+
+.inner_right_container_top {
+  height: 196px;
+  background-color: blueviolet;
+}
+
+.inner_right_container_botton {
+  display: flex;
+  height: 196px;
+  background-color: red;
+}
+
+.inner_left {
+  height: 196px;
+  width: 300px;
+}
+
+.inner_right {
+  height: 196px;
+  width: 300px;
+}
+
+.label_container{
+  margin: 10px auto 0 auto;
+  height: auto;
+}
+
+.label_container h2 {
+  padding: 3px 25px;
+  color: white;
+  font-size: 15px;
+  width: 80px;
+  background-color: rgb(219, 106, 0);
+  margin: 0;
+}
+
+.label_container {
+  background-color: rgb(221, 216, 207);
+}
+
+.second_home_container {
+  display: flex;
+  height: 40rem;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.news_container {
+  width: 840px;
+  background-color: black;
+}
+
+.advertisements_colum {
+  width: 17.5rem;
+  background-color: aqua;
+}
