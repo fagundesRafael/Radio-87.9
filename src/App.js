@@ -21,38 +21,37 @@ import Login from "./extras/Login";
 import Register from "./extras/Register";
 
 import Início from "./pages/Início/Início";
-import CreatePost from "./pages/CreatePost"
+import CreatePost from "./pages/CreatePost/CreatePost"
 import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   const [user, setUser] = useState(undefined);
   const { auth } = useAuthentication();
 
-  const loadingUser = user == undefined;
+  const loadingUser = user === undefined;
 
   useEffect(() => {
-
     onAuthStateChanged(auth, (user) => {
-      setUser(user)
-    }, [auth])
+      setUser(user);
+    });
+  }, [auth]);
 
-  })
-
-  if(loadingUser) {
-    return <p>Carregando usuário...</p>
+  if (loadingUser) {
+    return <p>Carregando...</p>;
   }
+
 
   return (
     <div className="App">
-      <AuthProvider value={user}>
+      <AuthProvider value={{user}}>
         <Router>
           <Navbar />
           <Routes>
             <Route path="/" element={<Início />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/posts/create" element={<CreatePost/>} />
-            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/login" element={!user ? <Login /> : <Navigate to='/'/>} />
+            <Route path="/register" element={!user ? <Register /> : <Navigate to='/'/>} />
+            <Route path="/posts/create" element={user ? <CreatePost/> : <Navigate to='/'/>} />
+            <Route path="/dashboard" element={user ? <Dashboard/> : <Navigate to='/'/>} />
           </Routes>
           <Footer />
         </Router>

@@ -51,18 +51,31 @@
   color: rgb(0, 0, 0);
 }
 
-.admin_button_sair {
+.admin_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.admin_section p {
+  color: #fff;
+  font-size: 13px;
+}
+
+.admin_button {
     font-size: 15px;
-    color: rgb(255, 0, 0);
+    font-weight: bold;
+    color: rgb(255, 109, 109);
     background-color: #000;
     border: none;
-    margin: 5px auto auto 35rem;
+    margin: 5px auto auto 1rem;
     justify-content: center;
 }
 
-.admin_button_sair:hover {
+.admin_button:hover {
     font-size: 15px;
     color: rgb(180, 0, 0);
-    background-color: rgb(39, 39, 39);
     cursor: pointer;
 }

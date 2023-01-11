@@ -3,13 +3,20 @@ import styles from "./Navbar.module.css";
 import logo from "../resources/imgs/logo01.jpg";
 import banner01 from "../resources/banners/banner900x85.png";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { useAuthentication } from "../hooks/useAuthentication";
 import { useAuthValue } from "../context/AuthContext";
 
 const Navbar = () => {
+  const { logout } = useAuthentication();
   const { user } = useAuthValue();
+
+  const navigate = useNavigate()
+
+  function goToPainel () {
+    navigate('/dashboard')
+  }
 
   return (
     <nav className={styles.navbar_general_container}>
@@ -74,9 +81,19 @@ const Navbar = () => {
               Política
             </NavLink>
           </li>
-          <li>
-            <button className={styles.admin_button_sair}>- Logout -</button>
-          </li>
+          {user && (
+            <ul className={styles.admin_section}>
+              <li>
+                <p>Bem-vindo {user.displayName}</p>
+              </li>
+              <li>
+                <button onClick={goToPainel}  className={styles.admin_button}>PAINEL</button>
+              </li>
+              <li>
+                <button onClick={logout} className={styles.admin_button}>SAIR</button>
+              </li>
+            </ul>
+          )}
         </ul>
       </div>
     </nav>

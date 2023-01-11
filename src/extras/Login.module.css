@@ -1,0 +1,11 @@
+.sign_in {
+    text-align: center;
+}
+
+.sign_in h1 {
+    margin: 30px 0 20px; 
+}
+
+.sign_in p {
+    color: #aaa;
+}
