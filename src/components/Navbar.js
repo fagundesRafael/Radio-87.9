@@ -5,7 +5,12 @@ import banner01 from "../resources/banners/banner900x85.png";
 
 import { NavLink } from "react-router-dom";
 
+import { useAuthentication } from "../hooks/useAuthentication";
+import { useAuthValue } from "../context/AuthContext";
+
 const Navbar = () => {
+  const { user } = useAuthValue();
+
   return (
     <nav className={styles.navbar_general_container}>
       <div className={styles.navbar_top_area}>
@@ -20,59 +25,59 @@ const Navbar = () => {
         </div>
       </div>
       <div className={styles.navbar_menu_row}>
-          <ul className={styles.links_list}>
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? styles.active : "")}
-              >
-                Início
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/cultura"
-                className={({ isActive }) => (isActive ? styles.active : "")}
-              >
-                Cultura
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/esportes"
-                className={({ isActive }) => (isActive ? styles.active : "")}
-              >
-                Esportes
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/eventos"
-                className={({ isActive }) => (isActive ? styles.active : "")}
-              >
-                Eventos
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/policial"
-                className={({ isActive }) => (isActive ? styles.active : "")}
-              >
-                Policial
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/política"
-                className={({ isActive }) => (isActive ? styles.active : "")}
-              >
-                Política
-              </NavLink>
-            </li>
-            <li>
-              <button className={styles.admin_button_sair} >- Logout -</button>
-            </li>
-          </ul>
+        <ul className={styles.links_list}>
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Início
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/cultura"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Cultura
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/esportes"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Esportes
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/eventos"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Eventos
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/policial"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Policial
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/política"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Política
+            </NavLink>
+          </li>
+          <li>
+            <button className={styles.admin_button_sair}>- Logout -</button>
+          </li>
+        </ul>
       </div>
     </nav>
   );
