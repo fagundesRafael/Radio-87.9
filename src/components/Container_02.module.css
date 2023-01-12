@@ -1,0 +1,16 @@
+.second_home_container {
+    display: flex;
+    height: 40rem;
+    max-width: 70rem;
+    margin: 0 auto;
+  }
+  
+  .news_container {
+    width: 840px;
+    background-color: black;
+  }
+  
+  .advertisements_colum {
+    width: 17.5rem;
+    background-color: aqua;
+  }

@@ -1,12 +1,13 @@
 import styles from "./Navbar.module.css";
 
 import logo from "../resources/imgs/logo01.jpg";
-import banner01 from "../resources/banners/banner900x85.png";
 
 import { NavLink, useNavigate } from "react-router-dom";
 
 import { useAuthentication } from "../hooks/useAuthentication";
 import { useAuthValue } from "../context/AuthContext";
+
+import Banner900x85 from "./Banner900x85";
 
 const Navbar = () => {
   const { logout } = useAuthentication();
@@ -31,9 +32,7 @@ const Navbar = () => {
           </NavLink>
           <h3>A rádio da família Machadinhense</h3>
         </div>
-        <div className={styles.banner_container}>
-          <img src={banner01} />
-        </div>
+          <Banner900x85/>
       </div>
       <div className={styles.navbar_menu_row}>
         <ul className={styles.links_list}>
