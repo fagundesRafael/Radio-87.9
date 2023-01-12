@@ -2,10 +2,13 @@ import styles from "./Dashboard.module.css";
 
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+
+import CardPost from "../../components/CardPost";
 
 const Dashboard = () => {
   const [query, setQuery] = useState("");
-  const [posts] = useState([])
+  const { documents: posts, loading } = useFetchDocuments('news')
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,7 +27,12 @@ const Dashboard = () => {
         <button className="btn btn-dark">Pesquisar</button>
       </form>
       <div>
-        <h1>Publicações:</h1>
+        {loading && (
+          <p>Carregando dados...</p>
+        )}
+        {posts && posts.map((post) => (
+          <CardPost key={post.id} post={post} />
+        ))}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>NÃO FOI ENCONTRADO NENHUMA POSTAGEM NO BANCO DE DADOS!</p>
