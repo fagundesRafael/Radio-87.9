@@ -14,8 +14,12 @@ const Navbar = () => {
 
   const navigate = useNavigate()
 
-  function goToPainel () {
+  function goToDash () {
     navigate('/dashboard')
+  }
+
+  function goToCreate () {
+    navigate('/posts/create')
   }
 
   return (
@@ -84,10 +88,13 @@ const Navbar = () => {
           {user && (
             <ul className={styles.admin_section}>
               <li>
-                <p>Bem-vindo {user.displayName}</p>
+                <p>| Bem-vindo {user.displayName} |</p>
               </li>
               <li>
-                <button onClick={goToPainel}  className={styles.admin_button}>PAINEL</button>
+                <button onClick={goToDash}  className={styles.admin_button}>GERENCIAR</button>
+              </li>
+              <li>
+                <button onClick={goToCreate}  className={styles.admin_button}>POSTAR</button>
               </li>
               <li>
                 <button onClick={logout} className={styles.admin_button}>SAIR</button>

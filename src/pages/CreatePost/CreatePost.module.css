@@ -1,0 +1,16 @@
+.create_post {
+    text-align: center;
+}
+
+.create_post h2 {
+    margin: 30px 0 20px; 
+}
+
+.create_post p {
+    color: #aaa;
+}
+
+.rowData {
+    display: flex;
+    justify-content: space-around;
+  }

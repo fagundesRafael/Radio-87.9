@@ -1,19 +1,11 @@
 import styles from "./Início.module.css";
 
+import Container_01 from "../../components/Container_01";
+
 const Início = () => {
   return (
     <div>
-      <div className={styles.first_home_container}>
-        <div className={styles.left_container}></div>
-        <div className={styles.right_container}>
-          <div className={styles.inner_right_container_top}></div>
-          <div className={styles.inner_right_container_botton}>
-            <div className={styles.inner_left}></div>
-            <div className={styles.inner_right}></div>
-          </div>
-        </div>
-      </div>
-
+      <Container_01 />
       <div className={styles.second_home_container}>
         <div className={styles.news_container}>
           <label className={styles.label_container}>
@@ -21,7 +13,7 @@ const Início = () => {
           </label>
         </div>
         <div className={styles.advertisements_colum}>
-        <label className={styles.label_container}>
+          <label className={styles.label_container}>
             <h2>Anúncios</h2>
           </label>
         </div>
