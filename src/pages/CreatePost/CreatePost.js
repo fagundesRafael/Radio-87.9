@@ -8,10 +8,17 @@ import { useInsertDocument } from "../../hooks/useInsertDocument";
 const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
+  const [head, setHead] = useState("");
   const [body, setBody] = useState("");
   const [theme, setTheme] = useState("");
   const [emphasis, setEmphasis] = useState("");
   const [tags, setTags] = useState([]);
+  const [extraImg1, setExtraImg1] = useState("");
+  const [extraImg2, setExtraImg2] = useState("");
+  const [extraImg3, setExtraImg3] = useState("");
+  const [extraImg4, setExtraImg4] = useState("");
+  const [extraImg5, setExtraImg5] = useState("");
+  const [extraImg6, setExtraImg6] = useState("");
   const [formError, setFormError] = useState("");
 
   const { user } = useAuthValue();
@@ -44,6 +51,13 @@ const CreatePost = () => {
     insertDocument({
       title,
       image,
+      extraImg1,
+      extraImg2,
+      extraImg3,
+      extraImg4,
+      extraImg5,
+      extraImg6,
+      head,
       body,
       theme,
       emphasis,
@@ -84,6 +98,19 @@ const CreatePost = () => {
           />
         </label>
         <label>
+          <span>Cabeçalho:</span>
+          <textarea
+            name="head"
+            cols="30"
+            rows="2"
+            required
+            placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+            onChange={(e) => setHead(e.target.value)}
+            value={head}
+            maxLength
+          ></textarea>
+        </label>
+        <label>
           <span>Conteúdo:</span>
           <textarea
             name="body"
@@ -122,6 +149,7 @@ const CreatePost = () => {
                 <option value="eventos">Eventos</option>
                 <option value="policial">Policial</option>
                 <option value="Política">Política</option>
+                <option value="Social">Social</option>
               </select>
             </div>
             <div>
@@ -137,10 +165,70 @@ const CreatePost = () => {
                 <option value="01">Capa 01</option>
                 <option value="02">Capa 02</option>
                 <option value="03">Capa 03</option>
-                <option value="03">Capa 03</option>
+                <option value="04">Capa 04</option>
               </select>
             </div>
           </div>
+        </label>
+        <label>
+          <span>Imagens extras:</span>
+          <input
+            type="text"
+            name="image"
+            placeholder="URL opcional:"
+            onChange={(e) => setExtraImg1(e.target.value)}
+            value={extraImg1}
+          />
+        </label>
+        <label>
+          <span>Imagens extras:</span>
+          <input
+            type="text"
+            name="image"
+            placeholder="URL opcional:"
+            onChange={(e) => setExtraImg2(e.target.value)}
+            value={extraImg2}
+          />
+        </label>
+        <label>
+          <span>Imagens extras:</span>
+          <input
+            type="text"
+            name="image"
+            placeholder="URL opcional:"
+            onChange={(e) => setExtraImg3(e.target.value)}
+            value={extraImg3}
+          />
+        </label>
+        <label>
+          <span>Imagens extras:</span>
+          <input
+            type="text"
+            name="image"
+            placeholder="URL opcional:"
+            onChange={(e) => setExtraImg4(e.target.value)}
+            value={extraImg4}
+          />
+        </label>
+        <label>
+          <span>Imagens extras:</span>
+          <input
+            type="text"
+            name="image"
+            placeholder="URL opcional:"
+            onChange={(e) => setExtraImg5(e.target.value)}
+            value={extraImg5}
+          />
+        </label>
+        <label>
+          <span>Imagens extras:</span>
+          <input
+            type="text"
+            name="image"
+            placeholder="URL opcional:"
+            onChange={(e) => setExtraImg6(e.target.value)}
+            value={extraImg6}
+          />
         </label>
         {!response.loading && <button className="btn">Postar</button>}
         {response.loading && (

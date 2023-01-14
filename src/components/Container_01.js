@@ -2,71 +2,69 @@ import styles from "./Container_01.module.css";
 
 import { useFetchDocuments } from "../hooks/useFetchDocuments";
 
-import { useEffect, useState } from "react";
+import imgRef1 from '../resources/banners/banner900x85.png'
+import imgRef2 from '../resources/banners/banner600x398.png'
+
+import { useState} from "react";
 
 const Container_01 = () => {
-  const [imagem, setImagem] = useState("");
+  const [file01, setFile01] = useState("");
+  const [file02, setFile02] = useState("");
+  const [file03, setFile03] = useState("");
+  const [file04, setFile04] = useState("");
 
-  const { documents: posts, loading } = useFetchDocuments("news");
+  const { documents: posts } = useFetchDocuments("news");
 
-  useEffect(() => {
-    setImagem(posts[0].image);
-  }, [posts]);
+  async function bannerItemFind() {
+    const selectedFile01 = await posts.find((post) => post.emphasis === "01");
+    const selectedFile02 = await posts.find((post) => post.emphasis === "02");
+    const selectedFile03 = await posts.find((post) => post.emphasis === "03");
+    const selectedFile04 = await posts.find((post) => post.emphasis === "04");
+
+    setFile01(selectedFile01);
+    setFile02(selectedFile02);
+    setFile03(selectedFile03);
+    setFile04(selectedFile04);
+  }
+
+  if (posts) {
+    bannerItemFind()
+  }
 
   return (
     <div className={styles.main_home_container}>
       <div className={styles.left_container}>
-        <img
-          src={imagem}
-          alt=""
-        />
+        {file01 && <img src={file01.image} alt={file01.title} />}
+        {!file01 && <img src={imgRef1} />}
         <div className={styles.text_left_container}>
-          <h1>Título</h1>
-          <p>
-            Lorecimus dolore in ea dolorem, alias hic architecto voluptatum? Et
-            assumenda liquam persp culpa adipisci.
-          </p>
+          {file01 && <label>{file01.title}</label>}
+          {file01 && <p>{file01.head}</p>}
         </div>
       </div>
       <div className={styles.right_container}>
         <div className={styles.inner_right_container_top}>
-          <img
-            src="https://images.unsplash.com/photo-1661961110144-12ac85918e40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-            alt=""
-          />
+          {file02 && <img src={file02.image} alt={file02.title} />}
+          {!file02 && <img src={imgRef2} />}
           <div className={styles.text_top_right_container}>
-            <h1>Título</h1>
-            <p>
-              Lorecimus dolore in ea dolorem, alias hic architecto voluptatum?
-              Et assumenda liquam persp culpa adipisci.
-            </p>
+            {file02 && <label>{file02.title}</label>}
+            {file03 && <p>{file02.head}</p>}
           </div>
         </div>
         <div className={styles.inner_right_container_botton}>
           <div className={styles.inner_left}>
-            <img
-              src="https://images.unsplash.com/photo-1673345548703-cd90c077877b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-              alt=""
-            />
+            {file03 && <img src={file03.image} alt={file03.title} />}
+            {!file02 && <img src={imgRef1} />}
             <div className={styles.text_left}>
-              <h1>Título</h1>
-              <p>
-                Lorecimus dolore in ea dolorem, alias hic architecto voluptatum?
-                Et assumenda liquam persp culpa adipisci.
-              </p>
+              {file03 && <label>{file03.title}</label>}
+              {file03 && <p>{file03.head}</p>}
             </div>
           </div>
           <div className={styles.inner_right}>
-            <img
-              src="https://images.unsplash.com/photo-1666831133872-89aabc5988d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
-              alt=""
-            />
+            {file04 && <img src={file04.image} alt={file04.title} />}
+            {!file02 && <img src={imgRef1} />}
             <div className={styles.text_right}>
-              <h1>Título</h1>
-              <p>
-                Lorecimus dolore in ea dolorem, alias hic architecto voluptatum?
-                Et assumenda liquam persp culpa adipisci.
-              </p>
+              {file04 && <label>{file04.title}</label>}
+              {file04 && <p>{file04.head}</p>}
             </div>
           </div>
         </div>
