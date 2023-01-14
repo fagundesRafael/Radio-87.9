@@ -16,6 +16,8 @@
   width: 300px;
   display: flex;
   margin: auto;
+  overflow: hidden;
+  object-fit: cover;
 }
 
 .navbar_menu_row {

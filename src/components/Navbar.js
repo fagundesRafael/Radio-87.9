@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className={styles.navbar_top_area}>
         <div className={styles.img_container}>
           <NavLink to="/">
-            <img src={logo} width={80} />
+            <img src={logo} alt="none" width={80} />
           </NavLink>
           <h3>A rádio da família Machadinhense</h3>
         </div>

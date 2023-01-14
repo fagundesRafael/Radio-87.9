@@ -35,7 +35,7 @@ const Container_01 = () => {
     <div className={styles.main_home_container}>
       <div className={styles.left_container}>
         {file01 && <img src={file01.image} alt={file01.title} />}
-        {!file01 && <img src={imgRef1} />}
+        {!file01 && <img src={imgRef1} alt="imgRef1" />}
         <div className={styles.text_left_container}>
           {file01 && <label>{file01.title}</label>}
           {file01 && <p>{file01.head}</p>}
@@ -44,7 +44,7 @@ const Container_01 = () => {
       <div className={styles.right_container}>
         <div className={styles.inner_right_container_top}>
           {file02 && <img src={file02.image} alt={file02.title} />}
-          {!file02 && <img src={imgRef2} />}
+          {!file02 && <img src={imgRef2} alt="imgRef2" />}
           <div className={styles.text_top_right_container}>
             {file02 && <label>{file02.title}</label>}
             {file03 && <p>{file02.head}</p>}
@@ -53,7 +53,7 @@ const Container_01 = () => {
         <div className={styles.inner_right_container_botton}>
           <div className={styles.inner_left}>
             {file03 && <img src={file03.image} alt={file03.title} />}
-            {!file02 && <img src={imgRef1} />}
+            {!file02 && <img src={imgRef1} alt="imgRef1" />}
             <div className={styles.text_left}>
               {file03 && <label>{file03.title}</label>}
               {file03 && <p>{file03.head}</p>}
@@ -61,7 +61,7 @@ const Container_01 = () => {
           </div>
           <div className={styles.inner_right}>
             {file04 && <img src={file04.image} alt={file04.title} />}
-            {!file02 && <img src={imgRef1} />}
+            {!file02 && <img src={imgRef1} alt="imgRef1" />}
             <div className={styles.text_right}>
               {file04 && <label>{file04.title}</label>}
               {file04 && <p>{file04.head}</p>}
