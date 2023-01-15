@@ -1,0 +1,32 @@
+.search_painel { 
+    display: flex;
+    flex-direction: column;
+}
+
+.top_area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+}
+
+.top_area h2 {
+    margin: 1rem 0;
+}
+
+.body_area {
+    display: flex;
+    flex-direction: column;
+}
+
+.list_items_spread {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem;
+}
+
+.margin_p_footer {
+    margin-bottom: 14rem;
+}

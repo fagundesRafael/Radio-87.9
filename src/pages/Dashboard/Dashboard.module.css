@@ -5,6 +5,12 @@
     justify-content: center;
   }
 
+  .dashboard_items {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
   .dashboard h1 {
     margin: 1rem auto;
   }

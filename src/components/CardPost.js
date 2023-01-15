@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 const CardPost = ({post}) => {
   return (
-    <div className={styles.post_card}>
+      <div className={styles.post_card}>
       <img src={post.image} alt={post.title} />
       <div className={styles.tags}>
         {post.tags.map((tag) => (
@@ -14,7 +14,7 @@ const CardPost = ({post}) => {
           </p>
         ))}
       </div>
-      <h2>{post.title}</h2>
+      <h2>{post.title.split("", 76)}...</h2>
       <p className={styles.createdby}>por: {post.createdBy}</p>
       
       <Link to={`/posts/${post.id}`} className="btn btn-outline">

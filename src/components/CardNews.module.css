@@ -48,22 +48,19 @@
   text-align: start;
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 10px;
-  overflow: hidden;
-  padding: 1rem;
+  padding: 1rem 1rem 0;
 }
 
 .data_container p {
   text-align: start;
   font-size: 12px;
   font-weight: lighter;
-  padding: 5px;
   height: 10px;
-  overflow: hidden;
   padding: 1rem;
 }
 
 .author {
   position: absolute;
   bottom: 1px;
+  color: rgb(146, 146, 146);
 }

@@ -9,8 +9,8 @@ const CardNews = ({ data }) => {
       </div>
 
       <div className={styles.data_container}>
-        <h1>{data.title}</h1>
-        <p>{data.head}</p>
+        <h1>{data.title.slice("", 100)}</h1>
+        <p>{data.head.slice("", 436)}</p>
         <div className={styles.author}>
         <p>Autor: {data.createdBy}</p>
         </div>

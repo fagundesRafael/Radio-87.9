@@ -1,3 +1,10 @@
+/* .card-area {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+} */
+
 .post_card {
   margin-bottom: 1em;
   background-color: rgba(163, 163, 163, 0.5);
@@ -13,7 +20,7 @@
 
 .post_card h2 {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 .post_card .tags {
@@ -23,18 +30,18 @@
 .tags p {
   display: flex;
   justify-content: center;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: lighter;
   margin: 0 0.5em 0 0.5rem;
 }
 
 .tags span {
-  font-weight: bold;
+  font-weight: li;
 }
 
 .createdby {
   font-style: italic;
   color: #444;
-  font-size: 0.8em;
+  font-size: 0.7em;
   margin-bottom: 1rem;
 }

@@ -8,14 +8,20 @@ import CardPost from "../../components/CardPost";
 
 const Dashboard = () => {
   const [query, setQuery] = useState("");
-  const { documents: posts, loading } = useFetchDocuments('news')
+  const { documents: posts, loading } = useFetchDocuments("news");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (query) {
+      return navigate(`/dashboard/search?q=${query}`);
+    }
   };
 
   return (
-    <div className={styles.dashboard} >
+    <div className={styles.dashboard}>
       <h1>Página de gerenciamento de publicações:</h1>
       <form className={styles.search_form} onSubmit={handleSubmit}>
         <input
@@ -26,19 +32,18 @@ const Dashboard = () => {
         />
         <button className="btn btn-dark">Pesquisar</button>
       </form>
-      <div>
-        {loading && (
-          <p>Carregando dados...</p>
-        )}
-        {posts && posts.map((post) => (
-          <CardPost key={post.id} post={post} />
-        ))}
+      <div className={styles.dashboard_items}>
+        {loading && <p>Carregando dados...</p>}
+        {posts && posts.map((post) => <CardPost key={post.id} post={post} />)}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
             <p>NÃO FOI ENCONTRADO NENHUMA POSTAGEM NO BANCO DE DADOS!</p>
-            <Link to='/posts/create' className="btn" >Criar Publicação</Link>
+            <Link to="/posts/create" className="btn">
+              Criar Publicação
+            </Link>
           </div>
         )}
+        <div></div>
       </div>
     </div>
   );
