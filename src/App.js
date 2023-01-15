@@ -26,6 +26,13 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Search from "./pages/Search/Search";
 import Post from "./pages/Post/Post";
 
+import Cultura from "./pages/Cultura/Cultura"
+import Esportes from "./pages/Esportes/Esportes"
+import Eventos from "./pages/Eventos/Eventos"
+import Policial from "./pages/Policial/Policial"
+import Política from "./pages/Política/Política"
+import Programas from "./pages/Programas/Programas"
+
 function App() {
   const [user, setUser] = useState(undefined);
   const { auth } = useAuthentication();
@@ -56,6 +63,13 @@ function App() {
             <Route path="/dashboard" element={user ? <Dashboard/> : <Navigate to='/'/>} />
             <Route path="/dashboard/search" element={user ? <Search/> : <Navigate to='/'/>} />
             <Route path="/post/:id" element={<Post/>} />
+
+            <Route path="/cultura" element={<Cultura/>} />
+            <Route path="/esportes" element={<Esportes/>} />
+            <Route path="/eventos" element={<Eventos/>} />
+            <Route path="/policial" element={<Policial/>} />
+            <Route path="/política" element={<Política/>} />
+            <Route path="/Programas" element={<Programas/>} />
           </Routes>
           <Footer />
         </Router>

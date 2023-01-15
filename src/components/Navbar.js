@@ -84,6 +84,14 @@ const Navbar = () => {
               Política
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/programas"
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              Programas
+            </NavLink>
+          </li>
           {user && (
             <ul className={styles.admin_section}>
               <li>

@@ -3,12 +3,15 @@ import styles from "./Dashboard.module.css";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
+import { useAuthValue } from "../../context/AuthContext";
 
 import CardPost from "../../components/CardPost";
 
 const Dashboard = () => {
+  const { user } = useAuthValue();
+  const uid = user.uid;
   const [query, setQuery] = useState("");
-  const { documents: posts, loading } = useFetchDocuments("news");
+  const { documents: posts, loading } = useFetchDocuments("news", null, uid);
 
   const navigate = useNavigate();
 

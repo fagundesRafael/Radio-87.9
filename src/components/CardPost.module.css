@@ -6,10 +6,11 @@
 } */
 
 .post_card {
+  position: relative;
   margin-bottom: 1em;
   background-color: rgba(163, 163, 163, 0.5);
   width: 20rem;
-  height: 19rem;
+  height: 19.5rem;
 }
 
 .post_card img {
@@ -44,4 +45,9 @@
   color: #444;
   font-size: 0.7em;
   margin-bottom: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
 }
