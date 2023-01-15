@@ -55,7 +55,7 @@ function App() {
             <Route path="/posts/create" element={user ? <CreatePost/> : <Navigate to='/'/>} />
             <Route path="/dashboard" element={user ? <Dashboard/> : <Navigate to='/'/>} />
             <Route path="/dashboard/search" element={user ? <Search/> : <Navigate to='/'/>} />
-            <Route path="/post/:id" element={user ? <Post/> : <Navigate to='/'/>} />
+            <Route path="/post/:id" element={<Post/>} />
           </Routes>
           <Footer />
         </Router>
