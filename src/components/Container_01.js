@@ -2,10 +2,11 @@ import styles from "./Container_01.module.css";
 
 import { useFetchDocuments } from "../hooks/useFetchDocuments";
 
-import imgRef1 from '../resources/banners/banner900x85.png'
-import imgRef2 from '../resources/banners/banner600x398.png'
+import imgRef1 from "../resources/banners/banner900x85.png";
+import imgRef2 from "../resources/banners/banner600x398.png";
 
-import { useState} from "react";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Container_01 = () => {
   const [file01, setFile01] = useState("");
@@ -28,12 +29,30 @@ const Container_01 = () => {
   }
 
   if (posts) {
-    bannerItemFind()
+    bannerItemFind();
+  }
+
+  const navigate = useNavigate();
+
+  function goTo1() {
+    navigate(`/post/${file01.id}`);
+  }
+
+  function goTo2() {
+    navigate(`/post/${file02.id}`);
+  }
+
+  function goTo3() {
+    navigate(`/post/${file03.id}`);
+  }
+
+  function goTo4() {
+    navigate(`/post/${file04.id}`);
   }
 
   return (
     <div className={styles.main_home_container}>
-      <div className={styles.left_container}>
+      <div onClick={goTo1} className={styles.left_container}>
         {file01 && <img src={file01.image} alt={file01.title} />}
         {!file01 && <img src={imgRef1} alt="imgRef1" />}
         <div className={styles.text_left_container}>
@@ -42,7 +61,7 @@ const Container_01 = () => {
         </div>
       </div>
       <div className={styles.right_container}>
-        <div className={styles.inner_right_container_top}>
+        <div onClick={goTo2} className={styles.inner_right_container_top}>
           {file02 && <img src={file02.image} alt={file02.title} />}
           {!file02 && <img src={imgRef2} alt="imgRef2" />}
           <div className={styles.text_top_right_container}>
@@ -51,7 +70,7 @@ const Container_01 = () => {
           </div>
         </div>
         <div className={styles.inner_right_container_botton}>
-          <div className={styles.inner_left}>
+          <div onClick={goTo3} className={styles.inner_left}>
             {file03 && <img src={file03.image} alt={file03.title} />}
             {!file02 && <img src={imgRef1} alt="imgRef1" />}
             <div className={styles.text_left}>
@@ -59,7 +78,7 @@ const Container_01 = () => {
               {file03 && <p>{file03.head}</p>}
             </div>
           </div>
-          <div className={styles.inner_right}>
+          <div onClick={goTo4} className={styles.inner_right}>
             {file04 && <img src={file04.image} alt={file04.title} />}
             {!file02 && <img src={imgRef1} alt="imgRef1" />}
             <div className={styles.text_right}>

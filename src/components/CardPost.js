@@ -17,7 +17,7 @@ const CardPost = ({post}) => {
       <h2>{post.title.split("", 76)}...</h2>
       <p className={styles.createdby}>por: {post.createdBy}</p>
       
-      <Link to={`/posts/${post.id}`} className="btn btn-outline">
+      <Link to={`/post/${post.id}`} className="btn btn-outline">
         Editar
       </Link>
     </div>
