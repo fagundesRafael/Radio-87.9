@@ -4,17 +4,31 @@ import { useParams } from "react-router-dom";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
 import { Timestamp } from "firebase/firestore";
 
+import { useEffect, useState } from "react";
+
 const Post = () => {
   const { id } = useParams();
   const { document: post, loading } = useFetchDocument("news", id);
 
+  const [date, setDate] = useState('')
+
+  useEffect(() => {
+    if (post) {
+      const date = new Date(post.createdAt.seconds * 1000);
   
-  if(post) {
-    console.log(JSON.stringify(post.createdAt.seconds))
-    console.log(new Date(post.createdAt.seconds*1000))
-    const date = post.createdAt.toDate().toDateString()
-    console.log(date)
-  }
+      const formatter = Intl.DateTimeFormat("pt-BR", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric"
+      });
+      
+      const formatedDate = formatter.format(date)
+      setDate(formatedDate)
+    }
+  }, [post])
 
   return (
     <div className={styles.post_container}>
@@ -29,7 +43,7 @@ const Post = () => {
             <p>
               Author(a): <span>{post.createdBy}</span>
             </p>
-            <h5>{post.createdAt.toDate().toDateString()}</h5>
+            <h5>{date}</h5>
           </>
         )}
       </div>

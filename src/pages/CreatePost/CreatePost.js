@@ -9,7 +9,12 @@ const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [head, setHead] = useState("");
-  const [body, setBody] = useState("");
+  const [p1, setP1] = useState("");
+  const [p2, setP2] = useState("");
+  const [p3, setP3] = useState("");
+  const [p4, setP4] = useState("");
+  const [p5, setP5] = useState("");
+  const [p6, setP6] = useState("");
   const [theme, setTheme] = useState("");
   const [emphasis, setEmphasis] = useState("");
   const [tags, setTags] = useState([]);
@@ -21,7 +26,11 @@ const CreatePost = () => {
   const [extraImg6, setExtraImg6] = useState("");
   const [formError, setFormError] = useState("");
 
+  const [date, setDate] = useState("");
+
   const { user } = useAuthValue();
+
+  console.log(date);
 
   const navigate = useNavigate();
 
@@ -31,18 +40,15 @@ const CreatePost = () => {
     e.preventDefault();
     setFormError("");
 
-    // validate image
     try {
       new URL(image);
     } catch (error) {
       setFormError("A imagem precisa ser uma URL.");
     }
 
-    // create tags array
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
-    // check values
-    if (!title || !image || !tags || !body) {
+    if (!title || !image || !tags) {
       setFormError("Por favor, preencha todos os campos!");
     }
 
@@ -50,6 +56,7 @@ const CreatePost = () => {
 
     insertDocument({
       title,
+      date,
       image,
       extraImg1,
       extraImg2,
@@ -58,7 +65,12 @@ const CreatePost = () => {
       extraImg5,
       extraImg6,
       head,
-      body,
+      p1,
+      p2,
+      p3,
+      p4,
+      p5,
+      p6,
       theme,
       emphasis,
       tags: tagsArray,
@@ -66,7 +78,6 @@ const CreatePost = () => {
       createdBy: user.displayName,
     });
 
-    // redirect to home page
     navigate("/");
   };
 
@@ -87,6 +98,7 @@ const CreatePost = () => {
           />
         </label>
         <label>
+            <img src={image} alt={title} />
           <span>URL da imagem:</span>
           <input
             type="text"
@@ -110,18 +122,80 @@ const CreatePost = () => {
             maxLength
           ></textarea>
         </label>
-        <label>
-          <span>Conteúdo:</span>
-          <textarea
-            name="body"
-            cols="30"
-            rows="2"
-            required
-            placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
-            onChange={(e) => setBody(e.target.value)}
-            value={body}
-          ></textarea>
-        </label>
+        <div className={styles.rowData}>
+          <label>
+            <span>Parágrafo 01:</span>
+            <textarea
+              name="p1"
+              cols="30"
+              rows="2"
+              required
+              placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+              onChange={(e) => setP1(e.target.value)}
+              value={p1}
+            ></textarea>
+          </label>
+          <label>
+            <span>Parágrafo 02:</span>
+            <textarea
+              name="p2"
+              cols="30"
+              rows="2"
+              required
+              placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+              onChange={(e) => setP2(e.target.value)}
+              value={p2}
+            ></textarea>
+          </label>
+          <label>
+            <span>Parágrafo 03:</span>
+            <textarea
+              name="p3"
+              cols="30"
+              rows="2"
+              required
+              placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+              onChange={(e) => setP3(e.target.value)}
+              value={p3}
+            ></textarea>
+          </label>
+          <label>
+            <span>Parágrafo 04:</span>
+            <textarea
+              name="p4"
+              cols="30"
+              rows="2"
+              required
+              placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+              onChange={(e) => setP4(e.target.value)}
+              value={p4}
+            ></textarea>
+          </label>
+          <label>
+            <span>Parágrafo 05:</span>
+            <textarea
+              name="p5"
+              cols="30"
+              rows="2"
+              required
+              placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+              onChange={(e) => setP5(e.target.value)}
+              value={p5}
+            ></textarea>
+          </label>
+          <label>
+            <span>Parágrafo 06:</span>
+            <textarea
+              name="p6"
+              cols="30"
+              rows="2"
+              required
+              placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+              onChange={(e) => setP6(e.target.value)}
+              value={p6}
+            ></textarea>
+          </label>
+        </div>
         <label>
           <span>Tags:</span>
           <input
@@ -170,66 +244,75 @@ const CreatePost = () => {
             </div>
           </div>
         </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg1(e.target.value)}
-            value={extraImg1}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg2(e.target.value)}
-            value={extraImg2}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg3(e.target.value)}
-            value={extraImg3}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg4(e.target.value)}
-            value={extraImg4}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg5(e.target.value)}
-            value={extraImg5}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg6(e.target.value)}
-            value={extraImg6}
-          />
-        </label>
+        <div className={styles.rowData}>
+          <label>
+            <img src={extraImg1} alt={title} />
+            <span>Imagens extras:</span>
+            <input
+              type="text"
+              name="image"
+              placeholder="URL opcional:"
+              onChange={(e) => setExtraImg1(e.target.value)}
+              value={extraImg1}
+            />
+          </label>
+          <label>
+          <img src={extraImg2} alt={title} />
+            <span>Imagens extras:</span>
+            <input
+              type="text"
+              name="image"
+              placeholder="URL opcional:"
+              onChange={(e) => setExtraImg2(e.target.value)}
+              value={extraImg2}
+            />
+          </label>
+          <label>
+          <img src={extraImg3} alt={title} />
+            <span>Imagens extras:</span>
+            <input
+              type="text"
+              name="image"
+              placeholder="URL opcional:"
+              onChange={(e) => setExtraImg3(e.target.value)}
+              value={extraImg3}
+            />
+          </label>
+          <label>
+          <img src={extraImg4} alt={title} />
+            <span>Imagens extras:</span>
+            <input
+              type="text"
+              name="image"
+              placeholder="URL opcional:"
+              onChange={(e) => setExtraImg4(e.target.value)}
+              value={extraImg4}
+            />
+          </label>
+          <label>
+          <img src={extraImg5} alt={title} />
+            <span>Imagens extras:</span>
+            <input
+              type="text"
+              name="image"
+              placeholder="URL opcional:"
+              onChange={(e) => setExtraImg5(e.target.value)}
+              value={extraImg5}
+            />
+          </label>
+          <label>
+          <img src={extraImg6} alt={title} />
+            <span>Imagens extras:</span>
+            <input
+              type="text"
+              name="image"
+              placeholder="URL opcional:"
+              onChange={(e) => setExtraImg6(e.target.value)}
+              value={extraImg6}
+            />
+          </label>
+        </div>
+
         {!response.loading && <button className="btn">Postar</button>}
         {response.loading && (
           <button className="btn" disabled>
