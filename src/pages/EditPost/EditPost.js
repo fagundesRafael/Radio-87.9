@@ -3,7 +3,7 @@ import styles from "./EditPost.module.css";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
-import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
 
 const EditPost = () => {
@@ -49,7 +49,7 @@ const EditPost = () => {
 
   const navigate = useNavigate();
 
-  const { insertDocument, response } = useInsertDocument("news");
+  const { updateDocument, response } = useUpdateDocument("news");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -72,7 +72,7 @@ const EditPost = () => {
 
     if (formError) return;
 
-    insertDocument({
+    updateDocument(id, {
       title,
       image,
       extraImg1,
@@ -91,180 +91,180 @@ const EditPost = () => {
     });
 
     // redirect to home page
-    navigate("/");
+    navigate("/dashboard");
   };
 
   return (
     <div className={styles.edit_post}>
       {post && (
         <>
-        <h2>Página de RE-edição de postagem</h2>
-      <p>Faça as alterações pertinentes e depois salve a postagem:</p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <span>Título:</span>
-          <input
-            type="text"
-            name="title"
-            required
-            placeholder="Informe o título:"
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
-          />
-        </label>
-        <label>
-          <span>URL da imagem:</span>
-          <input
-            type="text"
-            name="image"
-            required
-            placeholder="Informe a URL da imagem:"
-            onChange={(e) => setImage(e.target.value)}
-            value={image}
-          />
-        </label>
-        <img src={post.image} alt="" />
-        <label>
-          <span>Cabeçalho:</span>
-          <textarea
-            name="head"
-            cols="30"
-            rows="2"
-            required
-            placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
-            onChange={(e) => setHead(e.target.value)}
-            value={head}
-            maxLength
-          ></textarea>
-        </label>
-        <label>
-          <span>Conteúdo:</span>
-          <textarea
-            name="body"
-            cols="30"
-            rows="2"
-            required
-            placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
-            onChange={(e) => setBody(e.target.value)}
-            value={body}
-          ></textarea>
-        </label>
-        <label>
-          <span>Tags:</span>
-          <input
-            type="text"
-            name="tags"
-            required
-            placeholder="Informe as tags separadas por vírgula:"
-            onChange={(e) => setTags(e.target.value)}
-            value={tags}
-          />
-        </label>
-        <label>
-          <div className={styles.rowData}>
-            <div>
-              <span>Tema: </span>
-              <select
-                value={theme}
-                onChange={(e) => setTheme(e.target.value)}
-                name="tema"
+          <h2>Página de RE-edição de postagem</h2>
+          <p>Faça as alterações pertinentes e depois salve a postagem:</p>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <span>Título:</span>
+              <input
+                type="text"
+                name="title"
                 required
-              >
-                <option value="">Escolha uma opção</option>
-                <option value="cultura">Cultura</option>
-                <option value="esportes">Esportes</option>
-                <option value="eventos">Eventos</option>
-                <option value="policial">Policial</option>
-                <option value="Política">Política</option>
-                <option value="Social">Social</option>
-              </select>
-            </div>
-            <div>
-              <span>Destaque: </span>
-              <select
-                value={emphasis}
-                onChange={(e) => setEmphasis(e.target.value)}
-                name="destaque"
+                placeholder="Informe o título:"
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+              />
+            </label>
+            <label>
+              <span>URL da imagem:</span>
+              <input
+                type="text"
+                name="image"
                 required
-              >
-                <option value="">Escolha uma opção</option>
-                <option value="normal">normal</option>
-                <option value="01">Capa 01</option>
-                <option value="02">Capa 02</option>
-                <option value="03">Capa 03</option>
-                <option value="04">Capa 04</option>
-              </select>
-            </div>
-          </div>
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg1(e.target.value)}
-            value={extraImg1}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg2(e.target.value)}
-            value={extraImg2}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg3(e.target.value)}
-            value={extraImg3}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg4(e.target.value)}
-            value={extraImg4}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg5(e.target.value)}
-            value={extraImg5}
-          />
-        </label>
-        <label>
-          <span>Imagens extras:</span>
-          <input
-            type="text"
-            name="image"
-            placeholder="URL opcional:"
-            onChange={(e) => setExtraImg6(e.target.value)}
-            value={extraImg6}
-          />
-        </label>
-        {!response.loading && <button className="btn">Postar</button>}
-        {response.loading && (
-          <button className="btn" disabled>
-            Aguarde...
-          </button>
-        )}
-        {response.error && <p className="error">{response.error}</p>}
-      </form>
+                placeholder="Informe a URL da imagem:"
+                onChange={(e) => setImage(e.target.value)}
+                value={image}
+              />
+            </label>
+            <img className={styles.view_image} src={post.image} alt="" />
+            <label>
+              <span>Cabeçalho:</span>
+              <textarea
+                name="head"
+                cols="30"
+                rows="2"
+                required
+                placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+                onChange={(e) => setHead(e.target.value)}
+                value={head}
+                maxLength
+              ></textarea>
+            </label>
+            <label>
+              <span>Conteúdo:</span>
+              <textarea
+                name="body"
+                cols="30"
+                rows="2"
+                required
+                placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+                onChange={(e) => setBody(e.target.value)}
+                value={body}
+              ></textarea>
+            </label>
+            <label>
+              <span>Tags:</span>
+              <input
+                type="text"
+                name="tags"
+                required
+                placeholder="Informe as tags separadas por vírgula:"
+                onChange={(e) => setTags(e.target.value)}
+                value={tags}
+              />
+            </label>
+            <label>
+              <div className={styles.rowData}>
+                <div>
+                  <span>Tema: </span>
+                  <select
+                    value={theme}
+                    onChange={(e) => setTheme(e.target.value)}
+                    name="tema"
+                    required
+                  >
+                    <option value="">Escolha uma opção</option>
+                    <option value="cultura">Cultura</option>
+                    <option value="esportes">Esportes</option>
+                    <option value="eventos">Eventos</option>
+                    <option value="policial">Policial</option>
+                    <option value="Política">Política</option>
+                    <option value="Social">Social</option>
+                  </select>
+                </div>
+                <div>
+                  <span>Destaque: </span>
+                  <select
+                    value={emphasis}
+                    onChange={(e) => setEmphasis(e.target.value)}
+                    name="destaque"
+                    required
+                  >
+                    <option value="">Escolha uma opção</option>
+                    <option value="normal">normal</option>
+                    <option value="01">Capa 01</option>
+                    <option value="02">Capa 02</option>
+                    <option value="03">Capa 03</option>
+                    <option value="04">Capa 04</option>
+                  </select>
+                </div>
+              </div>
+            </label>
+            <label>
+              <span>Imagens extras:</span>
+              <input
+                type="text"
+                name="image"
+                placeholder="URL opcional:"
+                onChange={(e) => setExtraImg1(e.target.value)}
+                value={extraImg1}
+              />
+            </label>
+            <label>
+              <span>Imagens extras:</span>
+              <input
+                type="text"
+                name="image"
+                placeholder="URL opcional:"
+                onChange={(e) => setExtraImg2(e.target.value)}
+                value={extraImg2}
+              />
+            </label>
+            <label>
+              <span>Imagens extras:</span>
+              <input
+                type="text"
+                name="image"
+                placeholder="URL opcional:"
+                onChange={(e) => setExtraImg3(e.target.value)}
+                value={extraImg3}
+              />
+            </label>
+            <label>
+              <span>Imagens extras:</span>
+              <input
+                type="text"
+                name="image"
+                placeholder="URL opcional:"
+                onChange={(e) => setExtraImg4(e.target.value)}
+                value={extraImg4}
+              />
+            </label>
+            <label>
+              <span>Imagens extras:</span>
+              <input
+                type="text"
+                name="image"
+                placeholder="URL opcional:"
+                onChange={(e) => setExtraImg5(e.target.value)}
+                value={extraImg5}
+              />
+            </label>
+            <label>
+              <span>Imagens extras:</span>
+              <input
+                type="text"
+                name="image"
+                placeholder="URL opcional:"
+                onChange={(e) => setExtraImg6(e.target.value)}
+                value={extraImg6}
+              />
+            </label>
+            {!response.loading && <button className="btn">Salvar</button>}
+            {response.loading && (
+              <button className="btn" disabled>
+                Aguarde...
+              </button>
+            )}
+            {response.error && <p className="error">{response.error}</p>}
+          </form>
         </>
       )}
     </div>

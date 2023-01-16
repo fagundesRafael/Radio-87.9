@@ -15,3 +15,7 @@
     display: flex;
     justify-content: space-around;
   }
+
+  .view_image {
+    width: 30rem;
+  }
