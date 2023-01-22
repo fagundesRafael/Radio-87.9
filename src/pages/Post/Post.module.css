@@ -10,22 +10,33 @@
 }
 
 .post_container h1 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin: 1rem 0;
   text-align: start;
 }
 
 .post_container p {
   text-align: start;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: rgb(56, 56, 56);
   margin: 1rem auto;
 }
 
-.post_container p:last-child, span {
-    font-style: italic;
-    font-size: 1rem;
-    font-weight: bold;
-    color: black;
-  }
-  
+.post_container p:last-child,
+span {
+  font-style: italic;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: rgb(110, 110, 110);
+}
+
+.rowData {
+  display: flex;
+  text-align: start;
+  justify-content: flex-start;
+}
+
+.rowData svg {
+  font-size: 10px;
+  margin: auto .2rem;
+}

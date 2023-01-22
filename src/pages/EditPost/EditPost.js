@@ -13,7 +13,12 @@ const EditPost = () => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [head, setHead] = useState("");
-  const [body, setBody] = useState("");
+  const [p1, setP1] = useState("");
+  const [p2, setP2] = useState("");
+  const [p3, setP3] = useState("");
+  const [p4, setP4] = useState("");
+  const [p5, setP5] = useState("");
+  const [p6, setP6] = useState("");
   const [theme, setTheme] = useState("");
   const [emphasis, setEmphasis] = useState("");
   const [tags, setTags] = useState([]);
@@ -30,7 +35,12 @@ const EditPost = () => {
       setTitle(post.title);
       setImage(post.image);
       setHead(post.head);
-      setBody(post.body);
+      setP1(post.p1);
+      setP2(post.p2);
+      setP3(post.p3);
+      setP4(post.p4);
+      setP5(post.p5);
+      setP6(post.p6);
       setTheme(post.theme);
       setEmphasis(post.emphasis);
       const textTags = post.tags.join(", ");
@@ -66,7 +76,7 @@ const EditPost = () => {
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
     // check values
-    if (!title || !image || !tags || !body) {
+    if (!title || !image || !tags) {
       setFormError("Por favor, preencha todos os campos!");
     }
 
@@ -82,7 +92,6 @@ const EditPost = () => {
       extraImg5,
       extraImg6,
       head,
-      body,
       theme,
       emphasis,
       tags: tagsArray,
@@ -138,15 +147,75 @@ const EditPost = () => {
               ></textarea>
             </label>
             <label>
-              <span>Conteúdo:</span>
+              <span>Parágrafo 01:</span>
               <textarea
-                name="body"
+                name="p1"
                 cols="30"
                 rows="2"
                 required
                 placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
-                onChange={(e) => setBody(e.target.value)}
-                value={body}
+                onChange={(e) => setP1(e.target.value)}
+                value={p1}
+              ></textarea>
+            </label>
+            <label>
+              <span>Parágrafo 02:</span>
+              <textarea
+                name="p2"
+                cols="30"
+                rows="2"
+                required
+                placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+                onChange={(e) => setP2(e.target.value)}
+                value={p2}
+              ></textarea>
+            </label>
+            <label>
+              <span>Parágrafo 03:</span>
+              <textarea
+                name="p3"
+                cols="30"
+                rows="2"
+                required
+                placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+                onChange={(e) => setP3(e.target.value)}
+                value={p3}
+              ></textarea>
+            </label>
+            <label>
+              <span>Parágrafo 04:</span>
+              <textarea
+                name="p4"
+                cols="30"
+                rows="2"
+                required
+                placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+                onChange={(e) => setP4(e.target.value)}
+                value={p4}
+              ></textarea>
+            </label>
+            <label>
+              <span>Parágrafo 05:</span>
+              <textarea
+                name="p5"
+                cols="30"
+                rows="2"
+                required
+                placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+                onChange={(e) => setP5(e.target.value)}
+                value={p5}
+              ></textarea>
+            </label>
+            <label>
+              <span>Parágrafo 06:</span>
+              <textarea
+                name="p6"
+                cols="30"
+                rows="2"
+                required
+                placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
+                onChange={(e) => setP6(e.target.value)}
+                value={p6}
               ></textarea>
             </label>
             <label>
