@@ -26,6 +26,7 @@ import EditPost from "./pages/EditPost/EditPost"
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Search from "./pages/Search/Search";
 import Post from "./pages/Post/Post";
+import Img_UP from "./pages/Img_Database/Img_UP";
 
 import Cultura from "./pages/Cultura/Cultura"
 import Esportes from "./pages/Esportes/Esportes"
@@ -65,6 +66,7 @@ function App() {
             <Route path="/dashboard" element={user ? <Dashboard/> : <Navigate to='/'/>} />
             <Route path="/dashboard/search" element={user ? <Search/> : <Navigate to='/'/>} />
             <Route path="/post/:id" element={<Post/>} />
+            <Route path="/posts/img_upload" element={user? <Img_UP/> : <Navigate to='/'/>} />
 
             <Route path="/cultura" element={<Cultura/>} />
             <Route path="/esportes" element={<Esportes/>} />

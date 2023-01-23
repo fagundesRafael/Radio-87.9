@@ -1,0 +1,8 @@
+.IMG_UPPPER_Container {
+    margin: 5rem auto;
+    min-height: 18rem;
+}
+
+.IMG_UPPPER_Container img {
+    width: 50%;
+}

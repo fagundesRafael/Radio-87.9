@@ -25,6 +25,10 @@ const Navbar = () => {
     navigate("/posts/create");
   }
 
+  function goToImgUpLoad() {
+    navigate('/posts/img_upload');
+  }
+
   return (
     <nav className={styles.navbar_general_container}>
       <div className={styles.navbar_top_area}>
@@ -109,6 +113,11 @@ const Navbar = () => {
               <li>
                 <button onClick={goToCreate} className={styles.admin_button}>
                   POSTAR
+                </button>
+              </li>
+              <li>
+                <button onClick={goToImgUpLoad} className={styles.admin_button}>
+                  GALERIA
                 </button>
               </li>
               <li>
