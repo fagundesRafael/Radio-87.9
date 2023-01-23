@@ -1,6 +1,6 @@
 import styles from './Banner900x85.module.css'
 
-import banner from '../resources/banners/banner900x85.png'
+import banner from '../resources/banners/banner460x85.png'
 
 const Banner900x85 = () => {
   return (

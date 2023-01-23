@@ -1,4 +1,13 @@
 .banner_container {
     display: flex;
-    margin: auto;
+    margin: auto 12rem auto 0;
+  }
+
+  @media screen and (max-width: 955px) {
+    .banner_container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: auto;
+    }
   }

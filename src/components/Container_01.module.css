@@ -232,3 +232,32 @@
   overflow: hidden;
   max-height: 8ch;
 }
+
+/******************************/
+
+@media screen and (max-width: 965px) {
+  .main_home_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px auto;
+    width: 90%;
+    max-height: 65rem;
+  }
+
+  .left_container {
+    max-height: 398px;
+    width: calc(44vw + 20vh);
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
+  }
+  .right_container {
+
+    gap: 10px;
+    height: 398px;
+    width: calc(44vw + 20vh);
+  }
+}

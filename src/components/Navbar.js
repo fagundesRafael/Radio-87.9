@@ -1,4 +1,5 @@
 import styles from "./Navbar.module.css";
+import './Navbar.css'
 
 import logo from "../resources/imgs/logo01.jpg";
 
@@ -10,17 +11,18 @@ import { useAuthValue } from "../context/AuthContext";
 import Banner900x85 from "./Banner900x85";
 
 const Navbar = () => {
+
   const { logout } = useAuthentication();
   const { user } = useAuthValue();
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  function goToDash () {
-    navigate('/dashboard')
+  function goToDash() {
+    navigate("/dashboard");
   }
 
-  function goToCreate () {
-    navigate('/posts/create')
+  function goToCreate() {
+    navigate("/posts/create");
   }
 
   return (
@@ -32,9 +34,11 @@ const Navbar = () => {
           </NavLink>
           <h3>A rádio da família Machadinhense</h3>
         </div>
-          <Banner900x85/>
+        <div>
+        <Banner900x85 />
+        </div>
       </div>
-      <div className={styles.navbar_menu_row}>
+      <div className={styles.navbar_menu_main}>
         <ul className={styles.links_list}>
           <li>
             <NavLink
@@ -98,13 +102,19 @@ const Navbar = () => {
                 <p>| Bem-vindo {user.displayName} |</p>
               </li>
               <li>
-                <button onClick={goToDash}  className={styles.admin_button}>GERENCIAR</button>
+                <button onClick={goToDash} className={styles.admin_button}>
+                  GERENCIAR
+                </button>
               </li>
               <li>
-                <button onClick={goToCreate}  className={styles.admin_button}>POSTAR</button>
+                <button onClick={goToCreate} className={styles.admin_button}>
+                  POSTAR
+                </button>
               </li>
               <li>
-                <button onClick={logout} className={styles.admin_button}>SAIR</button>
+                <button onClick={logout} className={styles.admin_button}>
+                  SAIR
+                </button>
               </li>
             </ul>
           )}
