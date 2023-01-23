@@ -100,4 +100,11 @@
     height: 2px;
     padding: 1rem;
   }
+
+  .data_container span {
+    position: absolute;
+    bottom: 0;
+    text-align: start;
+    font-size: 10px;
+  }
 }

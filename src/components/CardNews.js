@@ -15,7 +15,7 @@ const CardNews = ({ data }) => {
 
           <div className={styles.data_container}>
             <h1>{data.title.slice("", 100)}</h1>
-            <p>{data.head.slice("", 300)}... <span><br></br> clique para ver a matéria na íntegra...</span></p>
+            <p>{data.head.slice("", 300)}... <span><br></br> continue lendo...</span></p>
             <div className={styles.author}>
               <p>Autor: {data.createdBy}</p>
             </div>
