@@ -86,7 +86,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 965px) {
+@media screen and (max-width: 1050px) {
   .navbar_top_area {
     height: 180px;
     flex-direction: column;
