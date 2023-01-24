@@ -255,7 +255,6 @@
     transition: 0.3s ease-in-out;
   }
   .right_container {
-
     gap: 10px;
     height: 398px;
     width: calc(44vw + 20vh);

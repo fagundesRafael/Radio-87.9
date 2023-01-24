@@ -1,8 +1,9 @@
 import styles from "./Navbar.module.css";
-import './Navbar.css'
+// import "./Navbar.css";
 
 import logo from "../resources/imgs/logo01.jpg";
 
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import { useAuthentication } from "../hooks/useAuthentication";
@@ -11,7 +12,6 @@ import { useAuthValue } from "../context/AuthContext";
 import Banner900x85 from "./Banner900x85";
 
 const Navbar = () => {
-
   const { logout } = useAuthentication();
   const { user } = useAuthValue();
 
@@ -26,8 +26,25 @@ const Navbar = () => {
   }
 
   function goToImgUpLoad() {
-    navigate('/posts/img_upload');
+    navigate("/posts/img_upload");
   }
+
+  // // to change burger classes
+  // const [burger_class, setBurgerClass] = useState("burger-bar unclicked");
+  // const [menu_class, setMenuClass] = useState("menu hidden");
+  // const [isMenuClicked, setIsMenuClicked] = useState(false);
+
+  // // toggle burger menu change
+  // const updateMenu = () => {
+  //   if (!isMenuClicked) {
+  //     setBurgerClass("burger-bar clicked");
+  //     setMenuClass("menu visible");
+  //   } else {
+  //     setBurgerClass("burger-bar unclicked");
+  //     setMenuClass("menu hidden");
+  //   }
+  //   setIsMenuClicked(!isMenuClicked);
+  // };
 
   return (
     <nav className={styles.navbar_general_container}>
@@ -39,10 +56,17 @@ const Navbar = () => {
           <h3>A rádio da família Machadinhense</h3>
         </div>
         <div>
-        <Banner900x85 />
+          <Banner900x85 />
         </div>
       </div>
       <div className={styles.navbar_menu_main}>
+        {/* <nav>
+          <div className="burger-menu" onClick={updateMenu}>
+            <div className={burger_class}></div>
+            <div className={burger_class}></div>
+            <div className={burger_class}></div>
+          </div>
+        </nav> */}
         <ul className={styles.links_list}>
           <li>
             <NavLink

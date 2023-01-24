@@ -120,18 +120,26 @@
 }
 
 @media screen and (max-width: 700px) {
+  .navbar_top_area {
+    position: relative;
+    margin-bottom: 10px;
+    height: 180px;
+    flex-direction: column;
+    justify-content: center;
+  }
   .navbar_menu_main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: fit-content;
     background-color: rgb(31, 31, 31);
-    width: 100vw;
+    width: 80vw;
     margin: auto;
   }
 
   .navbar_menu_main a {
     display: flex;
+    font-size: 20px;
     justify-content: center;
     align-items: center;
     color: rgb(255, 255, 255);
@@ -150,6 +158,8 @@
   }
 
   .links_list {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     display: flex;
     list-style: none;
