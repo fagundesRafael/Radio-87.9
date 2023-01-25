@@ -1,6 +1,7 @@
 import styles from "./Container_02.module.css";
 
 import CardNews from "./CardNews.js";
+import Vertical_area_banner from "./Vertical_area_banner";
 
 import { useFetchDocuments } from "../hooks/useFetchDocuments";
 
@@ -21,6 +22,7 @@ const Container_02 = () => {
         <label className={styles.label_container}>
           <h2>Anúncios</h2>
         </label>
+        <Vertical_area_banner />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuthentication } from "../hooks/useAuthentication";
 import { useAuthValue } from "../context/AuthContext";
 
-import Banner900x85 from "./Banner900x85";
+import Banner460x85 from "./Banner460x85";
 
 const Navbar = () => {
   const { logout } = useAuthentication();
@@ -23,6 +23,11 @@ const Navbar = () => {
   function goToCreate() {
     navigate("/posts/create");
   }
+
+  function goToBanners() {
+    navigate("/posts/banners");
+  }
+
 
   function goToImgUpLoad() {
     navigate("/posts/img_upload");
@@ -39,7 +44,7 @@ const Navbar = () => {
           <h3>A rádio da família Machadinhense</h3>
         </div>
         <div>
-          <Banner900x85 />
+          <Banner460x85 />
         </div>
       </div>
       <div className={styles.navbar_menu_main}>
@@ -94,10 +99,10 @@ const Navbar = () => {
           </li>
           <li>
             <NavLink
-              to="/programas"
+              to="/social"
               className={({ isActive }) => (isActive ? styles.active : "")}
             >
-              Programas
+              Social
             </NavLink>
           </li>
           {user && (
@@ -116,8 +121,13 @@ const Navbar = () => {
                 </button>
               </li>
               <li>
+                <button onClick={goToBanners} className={styles.admin_button}>
+                  BANNERS
+                </button>
+              </li>
+              <li>
                 <button onClick={goToImgUpLoad} className={styles.admin_button}>
-                  GALERIA
+                  UP_IMG
                 </button>
               </li>
               <li>

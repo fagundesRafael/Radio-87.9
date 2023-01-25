@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Política_container from "../../components/Política_container";
 
 const Política = () => {
   return (
-    <div>Política</div>
-  )
-}
+    <div>
+      <Política_container />
+    </div>
+  );
+};
 
-export default Política
+export default Política;

@@ -152,7 +152,6 @@ const EditPost = () => {
                 name="p1"
                 cols="30"
                 rows="2"
-                required
                 placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
                 onChange={(e) => setP1(e.target.value)}
                 value={p1}
@@ -164,7 +163,6 @@ const EditPost = () => {
                 name="p2"
                 cols="30"
                 rows="2"
-                required
                 placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
                 onChange={(e) => setP2(e.target.value)}
                 value={p2}
@@ -176,7 +174,6 @@ const EditPost = () => {
                 name="p3"
                 cols="30"
                 rows="2"
-                required
                 placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
                 onChange={(e) => setP3(e.target.value)}
                 value={p3}
@@ -188,7 +185,6 @@ const EditPost = () => {
                 name="p4"
                 cols="30"
                 rows="2"
-                required
                 placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
                 onChange={(e) => setP4(e.target.value)}
                 value={p4}
@@ -200,7 +196,6 @@ const EditPost = () => {
                 name="p5"
                 cols="30"
                 rows="2"
-                required
                 placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
                 onChange={(e) => setP5(e.target.value)}
                 value={p5}
@@ -212,7 +207,6 @@ const EditPost = () => {
                 name="p6"
                 cols="30"
                 rows="2"
-                required
                 placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
                 onChange={(e) => setP6(e.target.value)}
                 value={p6}
@@ -244,8 +238,8 @@ const EditPost = () => {
                     <option value="esportes">Esportes</option>
                     <option value="eventos">Eventos</option>
                     <option value="policial">Policial</option>
-                    <option value="Política">Política</option>
-                    <option value="Social">Social</option>
+                    <option value="política">Política</option>
+                    <option value="social">Social</option>
                   </select>
                 </div>
                 <div>

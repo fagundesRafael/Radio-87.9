@@ -27,13 +27,14 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Search from "./pages/Search/Search";
 import Post from "./pages/Post/Post";
 import Img_UP from "./pages/Img_Database/Img_UP";
+import Banners from "./pages/Banners/Banners";
 
 import Cultura from "./pages/Cultura/Cultura"
 import Esportes from "./pages/Esportes/Esportes"
 import Eventos from "./pages/Eventos/Eventos"
 import Policial from "./pages/Policial/Policial"
 import Política from "./pages/Política/Política"
-import Programas from "./pages/Programas/Programas"
+import Social from "./pages/Social/Social";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -67,13 +68,14 @@ function App() {
             <Route path="/dashboard/search" element={user ? <Search/> : <Navigate to='/'/>} />
             <Route path="/post/:id" element={<Post/>} />
             <Route path="/posts/img_upload" element={user? <Img_UP/> : <Navigate to='/'/>} />
+            <Route path="/posts/banners" element={user? <Banners/> : <Navigate to='/'/>} />
 
             <Route path="/cultura" element={<Cultura/>} />
             <Route path="/esportes" element={<Esportes/>} />
             <Route path="/eventos" element={<Eventos/>} />
             <Route path="/policial" element={<Policial/>} />
             <Route path="/política" element={<Política/>} />
-            <Route path="/Programas" element={<Programas/>} />
+            <Route path="/social" element={<Social/>} />
           </Routes>
           <Footer />
         </Router>

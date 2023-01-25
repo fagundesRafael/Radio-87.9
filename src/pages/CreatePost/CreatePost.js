@@ -141,7 +141,6 @@ const CreatePost = () => {
               name="p2"
               cols="30"
               rows="2"
-              required
               placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
               onChange={(e) => setP2(e.target.value)}
               value={p2}
@@ -153,7 +152,6 @@ const CreatePost = () => {
               name="p3"
               cols="30"
               rows="2"
-              required
               placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
               onChange={(e) => setP3(e.target.value)}
               value={p3}
@@ -165,7 +163,6 @@ const CreatePost = () => {
               name="p4"
               cols="30"
               rows="2"
-              required
               placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
               onChange={(e) => setP4(e.target.value)}
               value={p4}
@@ -177,7 +174,6 @@ const CreatePost = () => {
               name="p5"
               cols="30"
               rows="2"
-              required
               placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
               onChange={(e) => setP5(e.target.value)}
               value={p5}
@@ -189,7 +185,6 @@ const CreatePost = () => {
               name="p6"
               cols="30"
               rows="2"
-              required
               placeholder="Digite aqui o texto pertinente ao conteúdo da notícia:"
               onChange={(e) => setP6(e.target.value)}
               value={p6}
@@ -222,8 +217,8 @@ const CreatePost = () => {
                 <option value="esportes">Esportes</option>
                 <option value="eventos">Eventos</option>
                 <option value="policial">Policial</option>
-                <option value="Política">Política</option>
-                <option value="Social">Social</option>
+                <option value="política">Política</option>
+                <option value="social">Social</option>
               </select>
             </div>
             <div>
@@ -246,7 +241,7 @@ const CreatePost = () => {
         </label>
         <div className={styles.rowData}>
           <label>
-            <img src={extraImg1} alt={title} />
+            {extraImg1 && <img src={extraImg1} alt={title}/>}
             <span>Imagens extras:</span>
             <input
               type="text"
@@ -257,7 +252,7 @@ const CreatePost = () => {
             />
           </label>
           <label>
-          <img src={extraImg2} alt={title} />
+          {extraImg2 && <img src={extraImg2} alt={title}/>}
             <span>Imagens extras:</span>
             <input
               type="text"
@@ -268,7 +263,7 @@ const CreatePost = () => {
             />
           </label>
           <label>
-          <img src={extraImg3} alt={title} />
+          {extraImg3 && <img src={extraImg3} alt={title}/>}
             <span>Imagens extras:</span>
             <input
               type="text"
@@ -279,7 +274,7 @@ const CreatePost = () => {
             />
           </label>
           <label>
-          <img src={extraImg4} alt={title} />
+          {extraImg4 && <img src={extraImg4} alt={title}/>}
             <span>Imagens extras:</span>
             <input
               type="text"
@@ -290,7 +285,7 @@ const CreatePost = () => {
             />
           </label>
           <label>
-          <img src={extraImg5} alt={title} />
+          {extraImg5 && <img src={extraImg5} alt={title}/>}
             <span>Imagens extras:</span>
             <input
               type="text"
@@ -301,7 +296,7 @@ const CreatePost = () => {
             />
           </label>
           <label>
-          <img src={extraImg6} alt={title} />
+          {extraImg6 && <img src={extraImg6} alt={title}/>}
             <span>Imagens extras:</span>
             <input
               type="text"

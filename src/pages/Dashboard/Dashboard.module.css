@@ -40,3 +40,9 @@
     padding: 10px 25px;
     margin-bottom: 2rem;
   }
+
+  .banners_container {
+    width: 100vw;
+    height: 10px;
+    background-color: brown;
+  }

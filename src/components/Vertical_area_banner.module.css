@@ -1,0 +1,45 @@
+.general_container {
+    margin: auto;
+}
+
+.area_banner {
+  width: calc(10vw + 10vh);
+  height: calc(10vw + 10vh);
+  object-fit: cover;
+  background-color: beige;
+  margin: 0.8rem auto;
+}
+
+.area_social_media {
+  width: calc(10vw + 10vh);
+  height: calc(20vw + 20vh);
+  object-fit: cover;
+  background-color: beige;
+  margin: 0.8rem auto;
+}
+
+/******************************/
+
+@media screen and (max-width: 965px) {
+  .general_container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .area_banner {
+    width: calc(10vw + 10vh);
+    height: calc(10vw + 10vh);
+    object-fit: cover;
+    margin: 0.8rem auto;
+  }
+
+  .area_banner_img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .area_social_media {
+    width: calc(20vw + 25vh);
+    height: calc(25vw + 25vh);
+    object-fit: cover;
+  }
+}

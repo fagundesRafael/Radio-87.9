@@ -46,7 +46,6 @@ const Dashboard = () => {
             </Link>
           </div>
         )}
-        <div></div>
       </div>
     </div>
   );

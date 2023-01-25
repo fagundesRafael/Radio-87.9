@@ -15,7 +15,7 @@
 .label_container {
   font-size: 0.5rem;
   width: 100%;
-  height: 1.6%;
+  height: 5%;
   margin-bottom: 0;
   align-items: flex-start;
   padding: 6px;
@@ -29,22 +29,6 @@
 
 .advertisements_colum {
   width: 20%;
-}
-
-.area_banner {
-  width: calc(10vw + 10vh);
-  height: calc(10vw + 10vh);
-  object-fit: cover;
-  background-color: beige;
-  margin: 0.8rem auto;
-}
-
-.area_social_media {
-  width: calc(10vw + 10vh);
-  height: calc(20vw + 20vh);
-  object-fit: cover;
-  background-color: beige;
-  margin: 0.8rem auto;
 }
 
 /******************************/
@@ -69,24 +53,5 @@
 
   .advertisements_colum {
     width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .area_banner {
-    width: calc(10vw + 10vh);
-    height: calc(10vw + 10vh);
-    object-fit: cover;
-    margin: 0.8rem auto;
-  }
-
-  .area_banner_img {
-    width: 100%;
-    object-fit: cover;
-  }
-  
-  .area_social_media {
-    width: calc(20vw + 25vh);
-    height: calc(25vw + 25vh);
-    object-fit: cover;
   }
 }

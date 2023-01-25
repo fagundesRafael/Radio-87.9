@@ -1,17 +1,16 @@
-import styles from "./Cultura_container.module.css";
+import styles from "./Política_container.module.css";
 
 import CardNews from "./CardNews.js";
+import Vertical_area_banner from './Vertical_area_banner'
 
 import { useFetchDocuments } from "../hooks/useFetchDocuments";
-import Vertical_area_banner from "./Vertical_area_banner";
 
-const Cultura_container = () => {
+const Política_container = () => {
   const { documents: news } = useFetchDocuments("news");
 
   if (news) {
-    var culture = news.filter((item) => item.theme === "cultura");
+    var política = news.filter((item) => item.theme === "política");
   }
-
   return (
     <div className={styles.main_container}>
       <div className={styles.news_container}>
@@ -19,8 +18,8 @@ const Cultura_container = () => {
           <h2>Últimas notícias</h2>
         </label>
         <div className={styles.cards}>
-          {culture &&
-            culture.map((item) => <CardNews key={item.id} data={item} />)}
+          {política &&
+            política.map((item) => <CardNews key={item.id} data={item} />)}
         </div>
       </div>
       <div className={styles.advertisements_colum}>
@@ -33,4 +32,4 @@ const Cultura_container = () => {
   );
 };
 
-export default Cultura_container;
+export default Política_container;
