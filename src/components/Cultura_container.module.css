@@ -27,7 +27,7 @@
   margin: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .advertisements_colum {

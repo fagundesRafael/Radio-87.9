@@ -37,6 +37,7 @@ const Banners = () => {
 
   if (banners) {
     var banner01 = banners.find((banner) => banner.imageSize === "460x85");
+    var banner02 = banners.find((banner) => banner.imageSize === "1_400x400");
   }
 
   return (
@@ -72,18 +73,31 @@ const Banners = () => {
               >
                 <option value="">Escolha uma opção</option>
                 <option value="460x85">460px / 85px</option>
-                <option value="01">Capa 01</option>
-                <option value="02">Capa 02</option>
-                <option value="03">Capa 03</option>
-                <option value="04">Capa 04</option>
+                <option value="1_400x400">1_ 400px / 400px</option>
+                <option value="2_400x400">2_ 400px / 400px</option>
+                <option value="3_400x400">3_ 400px / 400px</option>
+                <option value="4_400x400">1_ 400px / 400px</option>
               </select>
             </div>
           </label>
           <div className={styles.rowData}>
             <div className={styles.img_banner}>
-            <hr />
+              <hr />
               <h3>BANNER: 460px / 85px</h3>
               {banner01 && <img src={banner01.imageURL} />}
+              <button
+                onClick={() => deleteDocument(banner01.id)}
+                className="btn btn-outline btn-danger"
+              >
+                Excluir
+              </button>
+              <hr />
+            </div>
+            <div className={styles.img_banner}>
+              <hr />
+              <h3>BANNER: 1_400px / 400px</h3>
+              {banner02 && <img src={banner02.imageURL} />}
+              {!banner02 && <p> <br></br> ANUNCIE AQUI</p>}
               <button
                 onClick={() => deleteDocument(banner01.id)}
                 className="btn btn-outline btn-danger"

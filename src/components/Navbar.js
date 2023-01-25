@@ -2,7 +2,6 @@ import styles from "./Navbar.module.css";
 
 import logo from "../resources/imgs/logo01.jpg";
 
-import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import { useAuthentication } from "../hooks/useAuthentication";
